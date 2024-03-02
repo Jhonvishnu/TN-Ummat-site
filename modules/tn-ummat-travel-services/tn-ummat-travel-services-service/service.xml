@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.ummat.travel">
+	<namespace>TNUMAAT</namespace>
+	<entity name="CarRental" local-service="true" remote-service="true" uuid="true">
+    <column name="carId" type="long" primary="true"></column>
+    <column name="pickUpLocation" type="String"></column>
+    <column name="destinationLocation" type="String"></column>
+    <column name="startDate" type="Date"></column>
+    <column name="endDate" type="Date"></column>
+    <!-- Add other necessary fields -->
+</entity>
+
+<entity local-service="true" name="CarDriverDetials"
+		remote-service="true" uuid="true">
+		<column name="Driveid" primary="true" type="long"
+			id-type="increment" />
+		<column name="fullName" type="String" />
+		<column name="gender" type="String" />
+		<column name="age" type="String" />
+		<column name="mobileNumber" type="String" />
+		<column name="email" type="String" />
+		<column name="Driverphoto" type="String" /> 
+	</entity>
+	
+	<entity local-service="true" name="CarDetials"
+		remote-service="true" uuid="true">
+		<column name="Carid" primary="true" type="long"
+			id-type="increment" />
+		<column name="CarName" type="String" />
+		<column name="CarNumber" type="String" />
+		<column name="Driverphoto" type="String" /> 
+		<column name="CarSets" type="String" /> 
+		<column name="carExtrabio" type="String" />
+	</entity>
+
+</service-builder>

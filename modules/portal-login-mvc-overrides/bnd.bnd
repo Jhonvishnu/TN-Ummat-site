@@ -1,0 +1,4 @@
+Bundle-Name: portal-login-mvc-overrides
+Bundle-SymbolicName: com.portal.login.mvc.overrides
+Bundle-Version: 1.0.0
+Export-Package: com.portal.login.mvc.overrides.constants

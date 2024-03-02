@@ -1,0 +1,6 @@
+Bundle-Name: tn-ummat-travel-services-service
+Bundle-SymbolicName: com.ummat.travel.service
+Bundle-Version: 1.0.0
+Liferay-Require-SchemaVersion: 1.0.0
+Liferay-Service: true
+-dsannotations-options: inherit

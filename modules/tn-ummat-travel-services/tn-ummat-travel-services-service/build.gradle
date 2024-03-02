@@ -1,0 +1,11 @@
+dependencies {
+	compile project(":modules:tn-ummat-travel-services:tn-ummat-travel-services-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../tn-ummat-travel-services-api/src/main/java"
+}
+
+group = "com.ummat.travel"

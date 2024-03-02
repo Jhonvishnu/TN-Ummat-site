@@ -1,0 +1,10 @@
+Bundle-Name: tn-ummat-travel-services-api
+Bundle-SymbolicName: com.ummat.travel.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.ummat.travel.exception,\
+	com.ummat.travel.model,\
+	com.ummat.travel.service,\
+	com.ummat.travel.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../tn-ummat-travel-services-service/service.xml

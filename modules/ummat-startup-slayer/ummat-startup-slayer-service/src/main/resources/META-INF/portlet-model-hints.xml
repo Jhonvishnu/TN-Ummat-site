@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.ummat.slayer.model.District">
+		<field name="uuid" type="String" />
+		<field name="districtId" type="long" />
+		<field name="regionId" type="long" />
+		<field name="name" type="String" />
+		<field name="active" type="boolean" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.ummat.slayer.model.Locality">
+		<field name="uuid" type="String" />
+		<field name="localityId" type="long" />
+		<field name="regionId" type="long" />
+		<field name="districtId" type="long" />
+		<field name="name" type="String" />
+		<field name="active" type="boolean" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+</model-hints>

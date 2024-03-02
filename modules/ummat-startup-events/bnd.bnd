@@ -1,0 +1,4 @@
+Bundle-Name: ummat-startup-events
+Bundle-SymbolicName: com.ummat.startup.events
+Bundle-Version: 1.0.0
+Export-Package: com.ummat.startup.events.constants

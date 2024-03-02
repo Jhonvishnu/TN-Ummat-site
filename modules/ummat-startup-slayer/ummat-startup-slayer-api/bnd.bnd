@@ -1,0 +1,10 @@
+Bundle-Name: ummat-startup-slayer-api
+Bundle-SymbolicName: com.ummat.slayer.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.ummat.slayer.exception,\
+	com.ummat.slayer.model,\
+	com.ummat.slayer.service,\
+	com.ummat.slayer.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../ummat-startup-slayer-service/service.xml

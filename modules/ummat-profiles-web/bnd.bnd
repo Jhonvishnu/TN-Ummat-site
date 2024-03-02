@@ -1,0 +1,5 @@
+Bundle-Name: ummat-profiles-web
+Bundle-SymbolicName: com.ummat.profiles.web
+Bundle-Version: 1.0.0
+Export-Package: com.ummat.profiles.web.constants
+Web-ContextPath: /ummat-profiles-web
