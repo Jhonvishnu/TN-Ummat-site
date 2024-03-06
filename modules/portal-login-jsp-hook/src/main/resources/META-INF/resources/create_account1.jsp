@@ -34,9 +34,42 @@ renderResponse.setTitle(LanguageUtil.get(request, "create-account"));
 	<portlet:param name="mvcRenderCommandName"
 		value="/login/create_account" />
 </portlet:actionURL>
+<style>
+    .card-style {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease-in-out;
+        background-image: url('path/to/your/background-image.jpg');
+        background-size: cover;
+    }
 
-<aui:form action="<%=createAccountURL%>" method="post" name="fm"
-	validateOnBlur="<%=false%>" enctype="multipart/form-data">
+    .card-style:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Additional styles for text fields */
+    .card-style input[type="text"],
+    .card-style input[type="file"],
+    .card-style select,
+    .card-style button {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    .card-style input[type="text"]:hover,
+    .card-style input[type="file"]:hover,
+    .card-style select:hover,
+    .card-style button:hover {
+        border: 1px solid #555;
+    }
+</style>
+
+<aui:form action="<%=createAccountURL%>"  method="post" name="fm"
+	validateOnBlur="<%=false%>" enctype="multipart/form-data" >
 	<aui:input name="saveLastPath" type="hidden" value="<%=false%>" />
 	<aui:input name="<%=Constants.CMD%>" type="hidden"
 		value="<%=Constants.ADD%>" />
@@ -237,12 +270,65 @@ renderResponse.setTitle(LanguageUtil.get(request, "create-account"));
 
 	<liferay-ui:error exception="<%=WebsiteURLException.class%>"
 		message="please-enter-a-valid-url" />
+<style>
+    .card-style {
+        position: relative;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease-in-out;
+        background-image: url('https://png.pngtree.com/background/');
+        background-color:lightgreen;
+        background-size: cover;
+        background:attachment;
+        overflow: hidden;
+    }
+
+    /* Add a light opacity overlay */
+    .card-style:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, ); /* Adjust the opacity value (0.8) as needed */
+    }
+
+    .card-style:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Additional styles for text fields */
+    .card-style input[type="text"],
+    .card-style input[type="file"],
+    .card-style select,
+    .card-style button {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    .card-style input[type="text"]:hover,
+    .card-style input[type="file"]:hover,
+    .card-style select:hover,
+    .card-style button:hover {
+        border: 1px solid #555;
+    }
+    .border-color{
+   
+    }
+</style>
 
 	<aui:model-context model="<%=Contact.class%>" />
+<div class="card-background">
 
 	<clay:sheet>
+	<div class="border-color">
 		<clay:sheet-section>
-			<div class="form-group">
+			<div class="card-style">
 				<h3 class="sheet-subtitle">
 					<liferay-ui:message key="user-display-data" />
 				</h3>
@@ -257,7 +343,7 @@ renderResponse.setTitle(LanguageUtil.get(request, "create-account"));
 
 						<c:if test="<%=!autoGenerateScreenName%>">
 							<aui:input model="<%=User.class%>" name="screenName"
-								label="Mobile Number">
+								label="Mobile Number" maxlength="10" minlength="10">
 
 								<%
 								ScreenNameValidator screenNameValidator = ScreenNameValidatorFactory.getInstance();
@@ -310,7 +396,7 @@ renderResponse.setTitle(LanguageUtil.get(request, "create-account"));
 				</clay:row>
 			</div>
 
-			<div class="form-group">
+			<div class="card-style">
 				<h3 class="sheet-subtitle">
 					<liferay-ui:message key="personal-information" />
 				</h3>
@@ -350,6 +436,7 @@ renderResponse.setTitle(LanguageUtil.get(request, "create-account"));
 							id="siteSelection">
 							<aui:option value="">Select One</aui:option>
 							<aui:option value="matrimony">For Matrimony</aui:option>
+							<aui:option value="travel">For travel</aui:option>
 						</aui:select>
 						<aui:script>
 							$("#matrimony").hide();
@@ -552,3 +639,6 @@ renderResponse.setTitle(LanguageUtil.get(request, "create-account"));
 		</clay:sheet-section>
 	</clay:sheet>
 </aui:form>
+</div>
+</div>
+</div>

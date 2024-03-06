@@ -6,7 +6,6 @@
 --%>
 
 <%@ include file="/init.jsp" %>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
 <c:choose>
 	<c:when test="<%= themeDisplay.isSignedIn() %>">
@@ -145,13 +144,6 @@
 
 				<liferay-util:dynamic-include key="com.liferay.login.web#/login.jsp#alertPost" />
 
-				<strong id="headtittlesignin">Sign in</strong>
-				<div id="iconsmedia">
-				<i class="fa-brands fa-facebook"></i>
-				<i class="fa-brands fa-google-plus-g"></i>
-				<i class="fa-brands fa-linkedin-in"></i>
-				</div>
-				<span id="justinfo"> or use your account </span>
 				<aui:fieldset>
 
 					<%
@@ -168,13 +160,13 @@
 					}
 					%>
 
-					<aui:input cssClass="clearable" label="<%= loginLabel %>" name="login" required="<%= true %>" showRequiredLabel="<%= false %>" type="text" value="<%= login %>" placeholder="Email">
+					<aui:input cssClass="clearable" label="<%= loginLabel %>" name="login" required="<%= true %>" showRequiredLabel="<%= false %>" type="text" value="<%= login %>" placeholder="Enter your mobile number">
 						<c:if test="<%= authType.equals(CompanyConstants.AUTH_TYPE_EA) %>">
 							<aui:validator name="email" />
 						</c:if>
 					</aui:input>
 
-					<aui:input name="password" required="<%= true %>" showRequiredLabel="<%= false %>" type="password" value="<%= password %>" placeholder="Password" />
+					<aui:input name="password" required="<%= true %>" showRequiredLabel="<%= false %>" type="password" value="<%= password %>" />
 
 					<span id="<portlet:namespace />passwordCapsLockSpan" style="display: none;"><liferay-ui:message key="caps-lock-is-on" /></span>
 
@@ -233,78 +225,3 @@
 		</aui:script>
 	</c:otherwise>
 </c:choose>
-
-<style>
-h1#clay-modal-label-1 {
-    color: #000;
-}
-.modal-header {
-    text-align: center;
-}
-
-.modal-header {
-    text-align: center;
-}
-.modal-body {
-    height: 100vh;
-}
-.taglib-icon span.taglib-text {
-    color: #000;
-}
-.modal-content {
-    height: 100vh;
-    box-sizing: border-box;
-}
-.modal-dialog.modal-md {
-    max-width: 900px !important;
-}
-.login-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 75vh;
-}
-.sign-in-form {
-    width: 50%;
-}
-label.control-label {
-    display: none;
-}
-strong#headtittlesignin {
-    display: grid;
-    justify-content: center;
-    color: #000;
-    font-size: larger;
-}
-i.fa-brands {
-    font-size: 30px;
-    padding: 5px;
-    color: #000;
-    border-radius: 50%;
-    cursor: pointer;
-}
-div#iconsmedia {
-    height: max-content;
-    padding: 10px;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0px 100px;
-    
-}
-.button-holder {
-    display: grid;
-    justify-content: center;
-}
-span#justinfo {
-    color: #000;
-    font-size: 10px;
-    display: grid;
-    justify-content: center;
-}
-
-
-</style>
-<script>
-document.getElementById("clay-modal-label-1").innerHTML = "Login Page";
-/* document.getElementsById("clay-modal-label-1").innerHTML = "Login Page"; */
-</script>

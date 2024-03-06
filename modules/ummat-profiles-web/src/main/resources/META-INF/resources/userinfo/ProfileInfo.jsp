@@ -12,6 +12,13 @@
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.Date"%>
 <%@page import="com.liferay.portal.kernel.theme.ThemeDisplay"%>
+
+<liferay-portlet:renderURL varImpl="backURL">
+	<portlet:param name="mvcPath" value="/view.jsp" />
+</liferay-portlet:renderURL>
+
+
+
 <%
 	// Retrieve the user ID from the request parameter
 	String userIdParam = request.getParameter("userId");
@@ -58,16 +65,18 @@
 		// Ensure userItems is not null
 				if (userDetails != null) {
 	%>
+	<aui:a href="${backURL}" cssClass="btn btn-primary" label="Back" />
 	<div class="container">
-		<div class="card">
+		<div class="card user-item">
 			<div class="basedetail">
 				<header class="profnameid">
 					<h3 style="color: seagreen">
 						<%=fullName%></h3>
 					<h4 style="color: seagreen"><%=UserId%>
-						<span>| Profile Created By Myself </span>
+						<span>| Profile Created By Myself  Email :<%=userDetails.getEmailAddress() %></span>
 					</h4>
 				</header>
+				
 				<div class="profileinfo">
 					<div class="profile">
 						<%-- <%
@@ -165,7 +174,7 @@
 							
 							<div>
 								<span>Height :<%=height%></span> <span>Weight :- <%=Weight%></span> <span>Mother Tongue :
-									Tamil</span> 
+									Tamil</span> Gender : <%=userDetails.getMale()%>
 							</div>
 						</div>
 
@@ -269,6 +278,7 @@
 				<h2>What I am Looking for</h2>
 				<span>Not Specified</span>
 			</div>
+			
 		</div>
 	</div>
 	</div>
@@ -290,6 +300,7 @@
 	<%
 		}
 	%>
+	
 	<style>
 #profimg {
 	border-radius: 30px;

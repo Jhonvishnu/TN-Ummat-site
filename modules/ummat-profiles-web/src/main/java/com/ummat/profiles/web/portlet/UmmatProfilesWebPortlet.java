@@ -39,27 +39,24 @@ import org.osgi.service.component.annotations.Component;
 		"javax.portlet.init-param.add-process-action-success-action=false",
 		"javax.portlet.security-role-ref=power-user,user" }, service = Portlet.class)
 public class UmmatProfilesWebPortlet extends MVCPortlet {
-	/*@Override
-		public void doView(RenderRequest renderRequest, RenderResponse renderResponse)
-				throws IOException, PortletException {
-		ThemeDisplay themeDisplay = (ThemeDisplay) renderRequest.getAttribute(WebKeys.THEME_DISPLAY);
-		List<User> currentProfileList = new ArrayList<>();
-		List<UserGroup> userGroups = UserGroupLocalServiceUtil.getUserUserGroups(themeDisplay.getUserId());
-		for (UserGroup userGroupItem : userGroups) {
-			List<User> users = UserLocalServiceUtil.getUserGroupUsers(userGroupItem.getUserGroupId());
-			for (User userItem : users) {
-				currentProfileList.add(userItem);
-			}
-		}
-		List<District> districts = DistrictLocalServiceUtil.getDistricts(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
-		renderRequest.setAttribute("districtLists", districts);
-		renderRequest.setAttribute("currentProfiles", currentProfileList);
-			super.doView(renderRequest, renderResponse);
-		}
-	private static final Log logger = LogFactoryUtil.getLog(UmmatProfilesWebPortlet.class);
-}*/
-	
-	
+	/*
+	 * @Override public void doView(RenderRequest renderRequest, RenderResponse
+	 * renderResponse) throws IOException, PortletException { ThemeDisplay
+	 * themeDisplay = (ThemeDisplay)
+	 * renderRequest.getAttribute(WebKeys.THEME_DISPLAY); List<User>
+	 * currentProfileList = new ArrayList<>(); List<UserGroup> userGroups =
+	 * UserGroupLocalServiceUtil.getUserUserGroups(themeDisplay.getUserId()); for
+	 * (UserGroup userGroupItem : userGroups) { List<User> users =
+	 * UserLocalServiceUtil.getUserGroupUsers(userGroupItem.getUserGroupId()); for
+	 * (User userItem : users) { currentProfileList.add(userItem); } }
+	 * List<District> districts =
+	 * DistrictLocalServiceUtil.getDistricts(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
+	 * renderRequest.setAttribute("districtLists", districts);
+	 * renderRequest.setAttribute("currentProfiles", currentProfileList);
+	 * super.doView(renderRequest, renderResponse); } private static final Log
+	 * logger = LogFactoryUtil.getLog(UmmatProfilesWebPortlet.class); }
+	 */
+
 	@Override
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse)
 			throws IOException, PortletException {
@@ -72,28 +69,25 @@ public class UmmatProfilesWebPortlet extends MVCPortlet {
 			for (User userItem : users) {
 				currentProfileSet.add(userItem);
 				currentProfileSet.addAll(users);
-				
+
 			}
 		}
 		List<User> currentProfileList = new ArrayList<>(currentProfileSet);
 		List<District> districts = DistrictLocalServiceUtil.getDistricts(QueryUtil.ALL_POS, QueryUtil.ALL_POS);
 		renderRequest.setAttribute("districtLists", districts);
 		renderRequest.setAttribute("currentProfiles", currentProfileList);
-		
+
 		super.doView(renderRequest, renderResponse);
-		
+
 	}
-	public static String ObjectToString( Object object) {
-		if(object != null) {
+
+	public static String ObjectToString(Object object) {
+		if (object != null) {
 			return String.valueOf(object);
 		}
 		return "";
 	}
 
-	
-
-
 	private static final Log logger = LogFactoryUtil.getLog(UmmatProfilesWebPortlet.class);
-	
+
 }
-	
