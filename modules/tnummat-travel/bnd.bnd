@@ -1,0 +1,4 @@
+Bundle-Name: tnummat-travel
+Bundle-SymbolicName: com.tnummat.travel
+Bundle-Version: 1.0.0
+Export-Package: com.tnummat.travel.constants

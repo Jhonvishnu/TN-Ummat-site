@@ -1,4 +1,0 @@
-Bundle-Name: tn-ummat-travel-mvc
-Bundle-SymbolicName: com.ummat.travel
-Bundle-Version: 1.0.0
-Export-Package: com.ummat.travel.constants
